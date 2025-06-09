@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyFlow - Typing Speed Test</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">KeyFlow</a>
+                <div class="header-controls">
+                    <button class="control-btn" id="soundToggle" title="Toggle Sound">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button class="control-btn" id="themeToggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="typing-section">
+                <div class="typing-prompt-container">
+                    <div class="typing-prompt" id="typingPrompt"></div>
+                </div>
+                <input type="text" class="typing-input hidden" id="typingInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </section>
+
+            <div class="button-group" id="startSection">
+                <button class="btn" id="startBtn">Start Test</button>
+            </div>
+
+            <section class="stats-section" id="statsSection">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="wpmValue">0</div>
+                        <div class="stat-label">WPM</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="accuracyValue">100%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="timeValue">0s</div>
+                        <div class="stat-label">Time</div>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="resetBtn">Reset Test</button>
+                </div>
+            </section>
+
+            <section class="results-section hidden" id="resultsSection">
+                <div class="results-card">
+                    <h2 class="results-title">Test Complete!</h2>
+                    <div class="results-stats">
+                        <div class="result-item">
+                            <div class="result-value" id="finalWpm">0</div>
+                            <div class="result-label">WPM</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="finalAccuracy">100%</div>
+                            <div class="result-label">Accuracy</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" id="finalTime">0s</div>
+                            <div class="result-label">Time</div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn" id="newTestBtn">New Test</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Audio elements for typing sounds -->
+    <audio id="keySound" preload="auto">
+        <source src="assets/sounds/key-press.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="errorSound" preload="auto">
+        <source src="assets/sounds/error.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="completeSound" preload="auto">
+        <source src="assets/sounds/complete.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
